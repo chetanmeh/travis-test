@@ -4,4 +4,5 @@ python:
   - "2.6"
 
 script:
-  - echo "travis-$TRAVIS_JOB_ID"
+  - export FOO="bar"
+  - echo "travis-$TRAVIS_JOB_ID, foo=[$FOO]"
