@@ -1,5 +1,7 @@
 language: python
 
+group: deprecated-2017Q3
+
 python:
   - "2.6"
 
