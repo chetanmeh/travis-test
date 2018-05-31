@@ -5,4 +5,4 @@ python:
 
 script:
   - export FOO="bar"
-  - echo "travis-$TRAVIS_JOB_ID, foo=[$FOO]"
+  - wget --no-verbose https://storage.googleapis.com/kubernetes-release/release/v1.6.4/bin/linux/amd64/kubect
