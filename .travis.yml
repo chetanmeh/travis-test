@@ -5,6 +5,10 @@ group: deprecated-2017Q3
 python:
   - "2.6"
 
+services:
+  - docker
+
 script:
   - export FOO="bar"
   - wget --no-verbose https://storage.googleapis.com/kubernetes-release/release/v1.6.4/bin/linux/amd64/kubectl
+  - docker run --rm alpine:3.6 apk add --update openssl && wget https://storage.googleapis.com
