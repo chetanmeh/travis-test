@@ -7,5 +7,3 @@ services:
 
 script:
   - export FOO="bar"
-  - wget --no-verbose https://storage.googleapis.com/kubernetes-release/release/v1.6.4/bin/linux/amd64/kubectl
-  - docker run --rm alpine:3.6 apk upgrade --update && apk add --update openssl && wget --no-verbose https://storage.googleapis.com/kubernetes-release/release/v1.6.4/bin/linux/amd64/kubectl
