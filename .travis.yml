@@ -8,17 +8,17 @@ services:
 
 jobs:
   include:
-    script:
+    - script:
       - export FOO="bar"
       - echo "TRAVIS_JOB_ID=$TRAVIS_JOB_ID"
       - echo "TRAVIS_JOB_NUMBER=$TRAVIS_JOB_NUMBER"
       - echo "TRAVIS_BUILD_ID=$TRAVIS_BUILD_ID"
       - echo "TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER"
-    env: DESCRIPTION="Job-1"
-    script:
+      env: DESCRIPTION="Job-1"
+    - script:
       - export FOO="bar"
       - echo "TRAVIS_JOB_ID=$TRAVIS_JOB_ID"
       - echo "TRAVIS_JOB_NUMBER=$TRAVIS_JOB_NUMBER"
       - echo "TRAVIS_BUILD_ID=$TRAVIS_BUILD_ID"
       - echo "TRAVIS_BUILD_NUMBER=$TRAVIS_BUILD_NUMBER"
-    env: DESCRIPTION="Job-2"
+      env: DESCRIPTION="Job-2"
