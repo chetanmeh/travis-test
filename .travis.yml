@@ -8,3 +8,4 @@ services:
 script:
   - export FOO="bar"
   - grep CGROUP  /boot/config-$(uname -r)
+  - docker run --memory=10M --memory-swap=10M hello-world
