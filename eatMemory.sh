@@ -11,3 +11,5 @@ function malloc() {
     sh -c "MEMBLOB=\$(dd if=/dev/urandom bs=1MB count=$N) ; sleep 1"
   fi
 }
+
+malloc 6000
