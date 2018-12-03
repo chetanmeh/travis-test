@@ -8,6 +8,6 @@ services:
 script:
   - grep CGROUP  /boot/config-$(uname -r)
   - docker run --name oom-check-node --rm  --memory 128m --memory-swap 128m -v "$PWD":/usr/src/app -w /usr/src/app openwhisk/nodejs6action node memoryWithGC.js
-  - journalctl -k | grep -i -e memory -e oom
+  - docker inspect oom-check-node
   - docker events --since '10m' | grep oom-check-node
 
