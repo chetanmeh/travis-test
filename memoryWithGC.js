@@ -3,10 +3,8 @@
 
 function eat(memoryMB) {
     var bytes = 1*1024*1024*memoryMB;
-    var s = "foo";
-    while(s.length < bytes) {
-        s = s + s;
-    }
+    var buffer = new Buffer.alloc(bytes, 'a');
+    buffer = null;
     console.log('done.');
 }
 
