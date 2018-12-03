@@ -7,6 +7,6 @@ services:
 
 script:
   - grep CGROUP  /boot/config-$(uname -r)
-  - docker run --name oom-check --rm -m 4m ubuntu:14.04 python3 -c 'open("/dev/zero").read(5*1024*1024)'
-  - docker events --since '10m'
+  - docker run --name oom-check-node --rm  -m 4m node:6-slim node -e 'new Buffer.alloc(5*1024*1024, "a");console.log("done!")'
+  - docker events --since '10m' | grep oom-check-node
 
