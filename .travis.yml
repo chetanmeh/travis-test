@@ -6,6 +6,7 @@ services:
   - docker
 
 script:
-  - export FOO="bar"
   - grep CGROUP  /boot/config-$(uname -r)
-  - docker run --memory=10M --memory-swap=10M hello-world
+  - docker run --name oom-check --rm -m 4m ubuntu:14.04 python3 -c 'open("/dev/zero").read(5*1024*1024)'
+  - docker events --since '10m'
+
