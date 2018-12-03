@@ -10,7 +10,7 @@ function eat(memoryMB) {
 
 function main(msg) {
     console.log('helloEatMemory', 'memory ' + msg.payload + 'MB');
-    global.gc();
+    //global.gc();
     eat(msg.payload);
     return {msg: 'OK, buffer of size ' + msg.payload + ' MB has been filled.'};
 }
